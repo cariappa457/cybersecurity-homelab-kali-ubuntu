@@ -1,0 +1,54 @@
+# Ubuntu Target - Check IP
+ip a
+
+# Kali - Connectivity test
+ping 192.168.128.145
+
+# Kali - Port and service scan
+nmap -sV 192.168.128.145
+
+# Kali - SSH login
+ssh ubuntu@192.168.128.145
+
+# Ubuntu - User and system enumeration
+whoami
+hostname
+uname -a
+
+# Ubuntu - Check sudo privileges
+sudo -l
+
+# Ubuntu - Privilege escalation
+sudo su
+
+# Ubuntu - Authentication logs
+tail -20 /var/log/auth.log
+
+# Ubuntu - Install Apache Web Server
+apt update
+apt install apache2 -y
+
+# Ubuntu - Check Apache service
+systemctl status apache2
+
+# Kali - Re-scan after Apache install
+nmap -sV 192.168.128.145
+
+# Kali - Web vulnerability scan
+nikto -h 192.168.128.145
+
+# Kali - Install Gobuster
+sudo apt install gobuster -y
+
+# Kali - Directory enumeration
+gobuster dir -u http://192.168.128.145 -w /usr/share/wordlists/dirb/common.txt
+
+# Ubuntu - Apache access logs
+tail -20 /var/log/apache2/access.log
+
+# Ubuntu - SSH authentication logs
+tail -20 /var/log/auth.log
+
+# Optional - Packet capture verification
+ping 192.168.128.145
+ssh ubuntu@192.168.128.145
